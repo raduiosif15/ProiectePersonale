@@ -218,9 +218,12 @@ public class HangmanView extends JFrame {
                 countMistakes = 0;
                 setStartCuloareStickman();
                 litereBune = 0;
-                String[] cuvantPosibil = new String[] {"QEQRSOANA", "QINSTANTQ", "QMETODQ", "QVIEWQ", "QCLASAQ", "QMOUSEQ"};
+                String[] cuvantPosibil = new String[] {"PAT", "JUDET", "TARA", "LAPTOP", "PLAPUMA", "TRICOU",
+                "PROSOP", "VALIZA", "GEAMANTAN", "PAPUCI", "GHIOZDAN", "MANCARE", "PORTOCALE", "RESTAURANT", "CARTE",
+                "COMUNISM", "CONTINENT", "APARTAMENT", "IMOBILIARE", "PARINTI", "CAMASA", "GEACA", "DULAP", "BIROU",
+                "MASINA", "ARTA", "CULOARE", "VIATA", "USA", "LICEU"};
                 Random rand = new Random();
-                int indexRandom = rand.nextInt(6);
+                int indexRandom = rand.nextInt(30);
                 cuvant = cuvantPosibil[indexRandom];
                 int m = cuvant.length();
                 litereCuvant = m;
@@ -267,33 +270,35 @@ public class HangmanView extends JFrame {
         litere.setLayout(null);
 
         Q.setBounds(10, 10, 52, 32);
-        Q.setBackground(new Color(255, 170, 128));
+        Q.setBackground(Color.CYAN);
         Q.setBorderPainted(false);
         Q.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Q.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'Q'){
-                        setLitera(i + 1, 'Q');
-                        count++;
+                if (Q.getBackground().equals(new Color(255, 170, 128))){
+                    Q.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'Q'){
+                            setLitera(i + 1, 'Q');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
-                    }
-                } else {
-                    litereBune += count;
-                    if (litereBune == litereCuvant){
-                        setStatusText("VICTORIE");
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;
+                        if (litereBune == litereCuvant){
+                            setStatusText("VICTORIE");
+                            colorareLitere();
+                        }
                     }
                 }
             }
@@ -301,34 +306,36 @@ public class HangmanView extends JFrame {
         litere.add(Q);
 
         W.setBounds(65, 10, 52, 32);
-        W.setBackground(new Color(255, 170, 128));
+        W.setBackground(Color.CYAN);
         W.setBorderPainted(false);
         W.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                W.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'W'){
-                        setLitera(i + 1, 'W');
-                        setCuvantDeAfisat(i + 1, 'W');
-                        count++;
+                if (W.getBackground().equals(new Color(255, 170, 128))) {
+                    W.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'W'){
+                            setLitera(i + 1, 'W');
+                            setCuvantDeAfisat(i + 1, 'W');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
-                    }
-                } else {
-                    litereBune += count;
-                    if (litereBune == litereCuvant){
-                        setStatusText("VICTORIE");
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;
+                        if (litereBune == litereCuvant){
+                            setStatusText("VICTORIE");
+                            colorareLitere();
+                        }
                     }
                 }
             }
@@ -336,761 +343,805 @@ public class HangmanView extends JFrame {
         litere.add(W);
 
         E.setBounds(120, 10, 52, 32);
-        E.setBackground(new Color(255, 170, 128));
+        E.setBackground(Color.CYAN);
         E.setBorderPainted(false);
         E.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                E.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'E'){
-                        setLitera(i + 1, 'E');
-                        setCuvantDeAfisat(i + 1, 'E');
-                        count++;
+                if (E.getBackground().equals(new Color(255, 170, 128))){
+                    E.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'E'){
+                            setLitera(i + 1, 'E');
+                            setCuvantDeAfisat(i + 1, 'E');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(E);
 
         R.setBounds(175, 10, 52, 32);
-        R.setBackground(new Color(255, 170, 128));
+        R.setBackground(Color.CYAN);
         R.setBorderPainted(false);
         R.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                R.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'R'){
-                        setLitera(i + 1, 'R');
-                        setCuvantDeAfisat(i + 1, 'R');
-                        count++;
+                if (R.getBackground().equals(new Color(255, 170, 128))){
+                    R.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'R'){
+                            setLitera(i + 1, 'R');
+                            setCuvantDeAfisat(i + 1, 'R');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(R);
 
         T.setBounds(230, 10, 52, 32);
-        T.setBackground(new Color(255, 170, 128));
+        T.setBackground(Color.CYAN);
         T.setBorderPainted(false);
         T.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                T.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'T'){
-                        setLitera(i + 1, 'T');
-                        setCuvantDeAfisat(i + 1, 'T');
-                        count++;
+                if (T.getBackground().equals(new Color(255, 170, 128))){
+                    T.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'T'){
+                            setLitera(i + 1, 'T');
+                            setCuvantDeAfisat(i + 1, 'T');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(T);
 
         Y.setBounds(285, 10, 52, 32);
-        Y.setBackground(new Color(255, 170, 128));
+        Y.setBackground(Color.CYAN);
         Y.setBorderPainted(false);
         Y.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Y.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'Y'){
-                        setLitera(i + 1, 'Y');
-                        
-                        count++;
-                    }
-                }
+                if (Y.getBackground().equals(new Color(255, 170, 128))){
+                    Y.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'Y'){
+                            setLitera(i + 1, 'Y');
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                            count++;
+                        }
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                    }
                 }
             }
         });
         litere.add(Y);
 
         U.setBounds(340, 10, 52, 32);
-        U.setBackground(new Color(255, 170, 128));
+        U.setBackground(Color.CYAN);
         U.setBorderPainted(false);
         U.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                U.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'U'){
-                        setLitera(i + 1, 'U');
-                        setCuvantDeAfisat(i + 1, 'U');
-                        count++;
+                if (U.getBackground().equals(new Color(255, 170, 128))){
+                    U.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'U'){
+                            setLitera(i + 1, 'U');
+                            setCuvantDeAfisat(i + 1, 'U');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(U);
 
         I.setBounds(395, 10, 52, 32);
-        I.setBackground(new Color(255, 170, 128));
+        I.setBackground(Color.CYAN);
         I.setBorderPainted(false);
         I.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                I.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'I'){
-                        setLitera(i + 1, 'I');
-                        setCuvantDeAfisat(i + 1, 'I');
-                        count++;
+                if (I.getBackground().equals(new Color(255, 170, 128))){
+                    I.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'I'){
+                            setLitera(i + 1, 'I');
+                            setCuvantDeAfisat(i + 1, 'I');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(I);
 
         O.setBounds(450, 10, 52, 32);
-        O.setBackground(new Color(255, 170, 128));
+        O.setBackground(Color.CYAN);
         O.setBorderPainted(false);
         O.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                O.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'O'){
-                        setLitera(i + 1, 'O');
-                        setCuvantDeAfisat(i + 1, 'O');
-                        count++;
+                if (O.getBackground().equals(new Color(255, 170, 128))){
+                    O.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'O'){
+                            setLitera(i + 1, 'O');
+                            setCuvantDeAfisat(i + 1, 'O');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(O);
 
         P.setBounds(505, 10, 52, 32);
-        P.setBackground(new Color(255, 170, 128));
+        P.setBackground(Color.CYAN);
         P.setBorderPainted(false);
         P.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                P.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'P'){
-                        setLitera(i + 1, 'P');
-                        setCuvantDeAfisat(i + 1, 'P');
-                        count++;
+                if (P.getBackground().equals(new Color(255, 170, 128))){
+                    P.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'P'){
+                            setLitera(i + 1, 'P');
+                            setCuvantDeAfisat(i + 1, 'P');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(P);
 
         A.setBounds(20, 45, 52, 32);
-        A.setBackground(new Color(255, 170, 128));
+        A.setBackground(Color.CYAN);
         A.setBorderPainted(false);
         A.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                A.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'A'){
-                        setLitera(i + 1, 'A');
-                        setCuvantDeAfisat(i + 1, 'A');
-                        count++;
+                if (A.getBackground().equals(new Color(255, 170, 128))){
+                    A.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'A'){
+                            setLitera(i + 1, 'A');
+                            setCuvantDeAfisat(i + 1, 'A');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(A);
 
         S.setBounds(75, 45, 52, 32);
-        S.setBackground(new Color(255, 170, 128));
+        S.setBackground(Color.CYAN);
         S.setBorderPainted(false);
         S.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                S.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'S'){
-                        setLitera(i + 1, 'S');
-                        setCuvantDeAfisat(i + 1, 'S');
-                        count++;
+                if (S.getBackground().equals(new Color(255, 170, 128))){
+                    S.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'S'){
+                            setLitera(i + 1, 'S');
+                            setCuvantDeAfisat(i + 1, 'S');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(S);
 
         D.setBounds(130, 45, 52, 32);
-        D.setBackground(new Color(255, 170, 128));
+        D.setBackground(Color.CYAN);
         D.setBorderPainted(false);
         D.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                D.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'D'){
-                        setLitera(i + 1, 'D');
-                        setCuvantDeAfisat(i + 1, 'D');
-                        count++;
+                if (D.getBackground().equals(new Color(255, 170, 128))){
+                    D.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'D'){
+                            setLitera(i + 1, 'D');
+                            setCuvantDeAfisat(i + 1, 'D');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(D);
 
         F.setBounds(185, 45, 52, 32);
-        F.setBackground(new Color(255, 170, 128));
+        F.setBackground(Color.CYAN);
         F.setBorderPainted(false);
         F.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                F.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'F'){
-                        setLitera(i + 1, 'F');
-                        setCuvantDeAfisat(i + 1, 'F');
-                        count++;
+                if (F.getBackground().equals(new Color(255, 170, 128))){
+                    F.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'F'){
+                            setLitera(i + 1, 'F');
+                            setCuvantDeAfisat(i + 1, 'F');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(F);
 
         G.setBounds(240, 45, 52, 32);
-        G.setBackground(new Color(255, 170, 128));
+        G.setBackground(Color.CYAN);
         G.setBorderPainted(false);
         G.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                G.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'G'){
-                        setLitera(i + 1, 'G');
-                        setCuvantDeAfisat(i + 1, 'G');
-                        count++;
+                if (G.getBackground().equals(new Color(255, 170, 128))){
+                    G.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'G'){
+                            setLitera(i + 1, 'G');
+                            setCuvantDeAfisat(i + 1, 'G');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(G);
 
         H.setBounds(295, 45, 52, 32);
-        H.setBackground(new Color(255, 170, 128));
+        H.setBackground(Color.CYAN);
         H.setBorderPainted(false);
         H.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                H.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'H'){
-                        setLitera(i + 1, 'H');
-                        setCuvantDeAfisat(i + 1, 'H');
-                        count++;
+                if (H.getBackground().equals(new Color(255, 170, 128))){
+                    H.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'H'){
+                            setLitera(i + 1, 'H');
+                            setCuvantDeAfisat(i + 1, 'H');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(H);
 
         J.setBounds(350, 45, 52, 32);
-        J.setBackground(new Color(255, 170, 128));
+        J.setBackground(Color.CYAN);
         J.setBorderPainted(false);
         J.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                J.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'J'){
-                        setLitera(i + 1, 'J');
-                        setCuvantDeAfisat(i + 1, 'J');
-                        count++;
+                if (J.getBackground().equals(new Color(255, 170, 128))){
+                    J.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'J'){
+                            setLitera(i + 1, 'J');
+                            setCuvantDeAfisat(i + 1, 'J');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(J);
 
         K.setBounds(405, 45, 52, 32);
-        K.setBackground(new Color(255, 170, 128));
+        K.setBackground(Color.CYAN);
         K.setBorderPainted(false);
         K.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                K.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'K'){
-                        setLitera(i + 1, 'K');
-                        setCuvantDeAfisat(i + 1, 'K');
-                        count++;
+                if (K.getBackground().equals(new Color(255, 170, 128))){
+                    K.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'K'){
+                            setLitera(i + 1, 'K');
+                            setCuvantDeAfisat(i + 1, 'K');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(K);
 
         L.setBounds(460, 45, 52, 32);
-        L.setBackground(new Color(255, 170, 128));
+        L.setBackground(Color.CYAN);
         L.setBorderPainted(false);
         L.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                L.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'L'){
-                        setLitera(i + 1, 'L');
-                        setCuvantDeAfisat(i + 1, 'L');
-                        count++;
+                if (L.getBackground().equals(new Color(255, 170, 128))){
+                    L.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'L'){
+                            setLitera(i + 1, 'L');
+                            setCuvantDeAfisat(i + 1, 'L');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(L);
 
         Z.setBounds(40, 80, 52, 32);
-        Z.setBackground(new Color(255, 170, 128));
+        Z.setBackground(Color.CYAN);
         Z.setBorderPainted(false);
         Z.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                Z.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'Z'){
-                        setLitera(i + 1, 'Z');
-                        setCuvantDeAfisat(i + 1, 'Z');
-                        count++;
+                if (Z.getBackground().equals(new Color(255, 170, 128))){
+                    Z.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'Z'){
+                            setLitera(i + 1, 'Z');
+                            setCuvantDeAfisat(i + 1, 'Z');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(Z);
 
         X.setBounds(95, 80, 52, 32);
-        X.setBackground(new Color(255, 170, 128));
+        X.setBackground(Color.CYAN);
         X.setBorderPainted(false);
         X.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                X.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'X'){
-                        setLitera(i + 1, 'X');
-                        setCuvantDeAfisat(i + 1, 'X');
-                        count++;
+                if (X.getBackground().equals(new Color(255, 170, 128))){
+                    X.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'X'){
+                            setLitera(i + 1, 'X');
+                            setCuvantDeAfisat(i + 1, 'X');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(X);
 
         C.setBounds(150, 80, 52, 32);
-        C.setBackground(new Color(255, 170, 128));
+        C.setBackground(Color.CYAN);
         C.setBorderPainted(false);
         C.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                C.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'C'){
-                        setLitera(i + 1, 'C');
-                        setCuvantDeAfisat(i + 1, 'C');
-                        count++;
+                if (C.getBackground().equals(new Color(255, 170, 128))){
+                    C.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'C'){
+                            setLitera(i + 1, 'C');
+                            setCuvantDeAfisat(i + 1, 'C');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(C);
 
         V.setBounds(205, 80, 52, 32);
-        V.setBackground(new Color(255, 170, 128));
+        V.setBackground(Color.CYAN);
         V.setBorderPainted(false);
         V.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                V.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'V'){
-                        setLitera(i + 1, 'V');
-                        setCuvantDeAfisat(i + 1, 'V');
-                        count++;
+                if (V.getBackground().equals(new Color(255, 170, 128))){
+                    V.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'V'){
+                            setLitera(i + 1, 'V');
+                            setCuvantDeAfisat(i + 1, 'V');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(V);
 
         B.setBounds(260, 80, 52, 32);
-        B.setBackground(new Color(255, 170, 128));
+        B.setBackground(Color.CYAN);
         B.setBorderPainted(false);
         B.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                B.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'B'){
-                        setLitera(i + 1, 'B');
-                        setCuvantDeAfisat(i + 1, 'B');
-                        count++;
+                if (B.getBackground().equals(new Color(255, 170, 128))){
+                    B.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'B'){
+                            setLitera(i + 1, 'B');
+                            setCuvantDeAfisat(i + 1, 'B');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(B);
 
         N.setBounds(315, 80, 52, 32);
-        N.setBackground(new Color(255, 170, 128));
+        N.setBackground(Color.CYAN);
         N.setBorderPainted(false);
         N.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                N.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'N'){
-                        setLitera(i + 1, 'N');
-                        setCuvantDeAfisat(i + 1, 'N');
-                        count++;
+                if (N.getBackground().equals(new Color(255, 170, 128))){
+                    N.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'N'){
+                            setLitera(i + 1, 'N');
+                            setCuvantDeAfisat(i + 1, 'N');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(N);
 
         M.setBounds(370, 80, 52, 32);
-        M.setBackground(new Color(255, 170, 128));
+        M.setBackground(Color.CYAN);
         M.setBorderPainted(false);
         M.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                M.setBackground(Color.CYAN);
-                int count = 0;
-                for (int i = 0; i < litereCuvant; i++){
-                    if (cuvant.charAt(i) == 'M'){
-                        setLitera(i + 1, 'M');
-                        setCuvantDeAfisat(i + 1, 'M');
-                        count++;
+                if (M.getBackground().equals(new Color(255, 170, 128))){
+                    M.setBackground(Color.CYAN);
+                    int count = 0;
+                    for (int i = 0; i < litereCuvant; i++){
+                        if (cuvant.charAt(i) == 'M'){
+                            setLitera(i + 1, 'M');
+                            setCuvantDeAfisat(i + 1, 'M');
+                            count++;
+                        }
                     }
-                }
 
-                if (count == 0){
-                    countMistakes++;
-                    setCuloareStickman();
-                    if (countMistakes >= 5){
-                        setStatusText("PIERDUT");
-                        afisareCuvant();
-                        colorareLitere();
+                    if (count == 0){
+                        countMistakes++;
+                        setCuloareStickman();
+                        if (countMistakes >= 5){
+                            setStatusText("PIERDUT");
+                            afisareCuvant();
+                            colorareLitere();
+                        }
+                    } else {
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                     }
-                } else {
-                    litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
                 }
             }
         });
         litere.add(M);
 
-        JPanel status = new JPanel();
-        status.setBackground(Color.CYAN);
-        status.setBounds(86, 415, 445, 26);
-        contentPane.add(status);
-        status.setLayout(null);
-
         statusText = new JTextField();
         statusText.setBorder(null);
+        statusText.setHorizontalAlignment(SwingConstants.CENTER);
+        statusText.setFont(new Font("Times New Roman", Font.BOLD, 30));
+        statusText.setEditable(false);
         statusText.setBackground(Color.CYAN);
-        statusText.setBounds(115, 0, 122, 26);
-        statusText.setFont(new Font("Times New Roman", Font.BOLD, 15));
-        status.add(statusText);
+        statusText.setBounds(0, 0, 361, 72);
+        cuvantDeGhicit.add(statusText);
         statusText.setColumns(10);
     }
 
