@@ -58,10 +58,15 @@ public class HangmanView extends JFrame {
     private JButton piciorDrept = new JButton("");
     private JButton maini = new JButton("");
 
+    private JTextField nrVictorii = new JTextField();
+    private JTextField nrPierderi = new JTextField();
+
     private String cuvant = "";
     private int litereBune = 0;
     private int litereCuvant = 0;
     private int countMistakes = 0;
+    private int nrJocuriPierdute = 0;
+    private int nrJocuriCastigate = 0;
 
     public HangmanView() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -289,14 +294,14 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
                         litereBune += count;
                         if (litereBune == litereCuvant){
-                            setStatusText("VICTORIE");
+                            setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii();
                             colorareLitere();
                         }
                     }
@@ -326,14 +331,14 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
                         litereBune += count;
                         if (litereBune == litereCuvant){
-                            setStatusText("VICTORIE");
+                            setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii();
                             colorareLitere();
                         }
                     }
@@ -363,12 +368,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -396,12 +401,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -429,12 +434,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -462,12 +467,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -495,12 +500,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -528,12 +533,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -561,12 +566,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -594,12 +599,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -627,12 +632,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -660,12 +665,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -693,12 +698,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -726,12 +731,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -759,12 +764,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -792,12 +797,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -825,12 +830,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -858,12 +863,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -891,12 +896,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -924,12 +929,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -957,12 +962,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -990,12 +995,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -1023,12 +1028,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -1056,12 +1061,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -1089,12 +1094,17 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
+                            nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){
+                            setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii();
+                            colorareLitere();
+                            nrJocuriCastigate++; setNrVictorii();
+                        }
                     }
                 }
             }
@@ -1122,12 +1132,12 @@ public class HangmanView extends JFrame {
                         countMistakes++;
                         setCuloareStickman();
                         if (countMistakes >= 5){
-                            setStatusText("PIERDUT");
+                            setStatusText("PIERDUT"); nrJocuriPierdute++; setNrPierderi();
                             afisareCuvant();
                             colorareLitere();
                         }
                     } else {
-                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); colorareLitere();}
+                        litereBune += count;  if (litereBune == litereCuvant){setStatusText("VICTORIE"); nrJocuriCastigate++; setNrVictorii(); colorareLitere();}
                     }
                 }
             }
@@ -1140,9 +1150,47 @@ public class HangmanView extends JFrame {
         statusText.setFont(new Font("Times New Roman", Font.BOLD, 30));
         statusText.setEditable(false);
         statusText.setBackground(Color.CYAN);
-        statusText.setBounds(0, 0, 361, 72);
+        statusText.setBounds(0, 44, 361, 64);
         cuvantDeGhicit.add(statusText);
         statusText.setColumns(10);
+
+        JTextField victorii = new JTextField();
+        victorii.setBorder(null);
+        victorii.setHorizontalAlignment(SwingConstants.CENTER);
+        victorii.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        victorii.setEditable(false);
+        victorii.setBackground(Color.CYAN);
+        victorii.setText("VICTORII:");
+        victorii.setBounds(10, 11, 98, 34);
+        cuvantDeGhicit.add(victorii);
+        victorii.setColumns(10);
+
+        JTextField pierderi = new JTextField();
+        pierderi.setBorder(null);
+        pierderi.setText("PIERDERI:");
+        pierderi.setHorizontalAlignment(SwingConstants.CENTER);
+        pierderi.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        pierderi.setEditable(false);
+        pierderi.setColumns(10);
+        pierderi.setBackground(Color.CYAN);
+        pierderi.setBounds(204, 11, 98, 34);
+        cuvantDeGhicit.add(pierderi);
+        
+        nrVictorii.setBorder(null);
+        nrVictorii.setHorizontalAlignment(SwingConstants.CENTER);
+        nrVictorii.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        nrVictorii.setBackground(Color.CYAN);
+        nrVictorii.setBounds(109, 13, 39, 32);
+        cuvantDeGhicit.add(nrVictorii);
+        nrVictorii.setColumns(10);
+
+        nrPierderi.setBorder(null);
+        nrPierderi.setHorizontalAlignment(SwingConstants.CENTER);
+        nrPierderi.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        nrPierderi.setColumns(10);
+        nrPierderi.setBackground(Color.CYAN);
+        nrPierderi.setBounds(304, 13, 39, 32);
+        cuvantDeGhicit.add(nrPierderi);
     }
 
     public static void setLitera1(char litera) {
@@ -1202,10 +1250,6 @@ public class HangmanView extends JFrame {
         statusText.setText(text);
     }
 
-    public static void setCountMistakes(int countMistakes) {
-        countMistakes = countMistakes;
-    }
-
     public void setStartCuloareStickman(){
         cap.setBorderPainted(false);
         trunchi.setBackground(Color.CYAN);
@@ -1262,6 +1306,14 @@ public class HangmanView extends JFrame {
         X.setBackground(Color.CYAN);
         Y.setBackground(Color.CYAN);
         Z.setBackground(Color.CYAN);
+    }
+
+    public void setNrVictorii() {
+        nrVictorii.setText(String.valueOf(nrJocuriCastigate));
+    }
+
+    public void setNrPierderi() {
+        nrPierderi.setText(String.valueOf(nrJocuriPierdute));
     }
 
     public void setCuvantDeAfisat(int litere, char caracter){
