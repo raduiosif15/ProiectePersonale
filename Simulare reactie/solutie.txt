@@ -1,0 +1,9 @@
+Descrierea solutiei:
+
+Fisierul log.dat atasat a fost obtinut in urma rularii apelului ./t2 100.
+
+Sincronizarea pentru crearea moleculelor si a atomilor am realizat-o cu ajutorul semafoarelor.
+
+Numararea moleculelor din produsii de reactie a fost determinat in functie de numarul moleculelor reactante. Simularea realizarii reactiei o reprezinta indeplinirea conditiilor necesare formarii reactiei. Nu exista in programul meu un thread suplimentar care sa simuleze reactia.
+
+Maparea am realizat-o cu ajutorul unei structuri de tip union.
